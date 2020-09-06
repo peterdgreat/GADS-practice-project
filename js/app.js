@@ -1,3 +1,12 @@
+if('serviceWorker' in navigator){
+    window.addEventListener('load',()=>{
+        navigator.serviceWorker
+        .register('./sw_cached_pages.js')
+        .then(reg=>console.log('service worker: registerd'))
+        .catch(error=>console.log(error))
+    });
+  }
+
 const api={
     key:"6289e5be2d11314bbf3b9716741ca763",
    url:"https://api.openweathermap.org/data/2.5/"
