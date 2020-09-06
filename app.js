@@ -1,11 +1,15 @@
 const api={
     key:"6289e5be2d11314bbf3b9716741ca763",
    url:"https://api.openweathermap.org/data/2.5/"
- }
+ ,
+ urlO:"https://api.openweathermap.org/data/2.5/onecall?"
+}
 document.addEventListener("DOMContentLoaded",refresh);
 function refresh(){
-    fetch (`${api.url}weather?q=New York&units=metric&APPID=${api.key}`)
-    .then(weather=>weather.json())
+ fetch (`${api.url}weather?q=New York&units=metric&APPID=${api.key}`)
+ //  fetch(`${api.urlO}lat=40.71&lon=-74.01&exclude=monthtly&units=metric&APPID=${api.key}`)
+  
+   .then(weather=>weather.json())
     .then(displayResults);
 }
 
@@ -15,19 +19,26 @@ search.addEventListener('keypress',setQuery );
 function setQuery(e){
     if(e.keyCode===13){
         getResults(search.value);
-       
+     
+
+   
     }
 } 
 
 function getResults(query){
-    fetch(`${api.url}weather?q=${query}&units=metric&APPID=${api.key}`)
+fetch(`${api.url}weather?q=${query}&units=metric&APPID=${api.key}`)
+   
     .then(weather=>{
        return weather.json()
+       
     })
     .then(displayResults);
+  
+
 }
 function displayResults(weather){
     console.log(weather);
+ 
     let city=document.getElementById('city')
  city.innerHTML=`${weather.name}, ${weather.sys.country}`
  let date=document.getElementById('date');
@@ -50,3 +61,4 @@ function dateBuilder(d){
     let year=d.getFullYear();
     return `${day} ${date} ${month} ${year}`;
 }
+

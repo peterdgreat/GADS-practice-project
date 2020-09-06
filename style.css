@@ -15,7 +15,7 @@ html{
 }
 
 .container{
-margin: 2em;
+margin: 3em;
 border-radius: 1em;
     height: 100vh;
     background:linear-gradient(to right,#9BBFE1,#EBB797);
@@ -58,7 +58,7 @@ input::placeholder{
 }
 .details{
     
-    background:linear-gradient(to right#451824#B74A29);
+   
   padding-top: 1em;
 
  
@@ -79,28 +79,16 @@ align-items: center;
 } 
 }
 
-@media screen and (min-width:765px){
+@media screen and (min-width:600px){
 
 
 .container{
-    padding-top: 5em; 
-display: flex;
-    margin: 2em 0 2em 0;
-    height: 100vh;
+    margin: 5em;
 
-}
-.searchbox{
-    flex: 1;
-    
-}
-.details{
-    flex: 1;
-    padding-top: 1px;
-    
 }
 
 .search{
-    margin-top: 159px;
+
  border-radius: 1em;
   height: 40px;
 align-items: center;
@@ -108,3 +96,40 @@ align-items: center;
     background-color: #FBFBFB;
 } 
 }
+
+
+@media screen and (min-width:800px){
+
+
+    .container{
+        margin: 10em;
+    
+    }
+    
+    .search{
+    
+     border-radius: 1em;
+      height: 40px;
+    align-items: center;
+        border: none;
+        background-color: #FBFBFB;
+    } 
+    }
+
+    @media screen and (min-width:1000px){
+
+
+        .container{
+            margin: 15em;
+        
+        }
+        
+        .search{
+        
+         border-radius: 1em;
+          height: 40px;
+        align-items: center;
+            border: none;
+            background-color: #FBFBFB;
+        } 
+        }
