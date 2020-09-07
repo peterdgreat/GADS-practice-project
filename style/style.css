@@ -14,6 +14,7 @@ html{
 
 }
 
+
 .container{
 margin: 3em;
 border-radius: 1em;
@@ -66,13 +67,44 @@ input::placeholder{
  border-radius: 1em;
 }
 .search{
- margin: 3em;
+ margin-top: 3em;
  border-radius: 1em;
   height: 40px;
 align-items: center;
     border: none;
     background-color: #FBFBFB;
 } 
+.weeklyDetails{
+    display: flex;
+    background:linear-gradient(to right,#9BBFE1,#EBB797);
+
+    
+
+}
+.hide{
+    display: none;
+}
+.days{
+    flex: 1;
+    padding-top: 1em;
+
+}
+.days .hi-low{
+    
+    color: #FBFBFB;
+    font-size: 24px;
+    font-weight: 500;
+}
+.daily{
+    color: #F3F4F5;
+    text-align: center;
+    margin-bottom: 1em;
+
+}
+.weeklyDetails{
+    text-align: center;
+}
+
 @media screen and (min-width:360px){
 .container{
     padding-top: 3em; 
