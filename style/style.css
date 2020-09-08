@@ -16,7 +16,7 @@ html{
 
 
 .container{
-margin: 3em;
+    margin: 3em 3em 1em 3em;
 border-radius: 1em;
     height: 100vh;
     background:linear-gradient(to right,#9BBFE1,#EBB797);
@@ -115,7 +115,7 @@ align-items: center;
 
 
 .container{
-    margin: 5em;
+    margin: 5em 5em 1em 5em;
 
 }
 
@@ -134,7 +134,7 @@ align-items: center;
 
 
     .container{
-        margin: 10em;
+        margin: 10em 10em 1em 10em;
     
     }
     
@@ -152,7 +152,7 @@ align-items: center;
 
 
         .container{
-            margin: 15em;
+            margin: 15em 15em 1em 15em;
         
         }
         
