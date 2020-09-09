@@ -3,7 +3,8 @@ const cacheAssets=[
 
     'index.html',
     'style/style.css',
-    'js/app.js'
+    'js/app.js',
+    'js/local.js'
     
     
 
