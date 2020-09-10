@@ -69,14 +69,7 @@ const api={
  ,
  urlO:"https://api.openweathermap.org/data/2.5/onecall?"
 }
-/*document.addEventListener("DOMContentLoaded",refresh);
-function refresh(){
- fetch (`${api.url}weather?q=New York&units=metric&APPID=${api.key}`)
- //  fetch(`${api.urlO}lat=40.71&lon=-74.01&exclude=monthtly&units=metric&APPID=${api.key}`)
-  
-   .then(weather=>weather.json())
-    .then(displayResults);
-}*/
+
 document.addEventListener("DOMContentLoaded",refresh);
 function refresh(){
     fetch(`${api.urlO}lat=40.71&lon=-74.01&exclude=minutely&units=metric&APPID=${api.key}`)
@@ -132,8 +125,22 @@ const search=document.getElementById('search');
 search.addEventListener('keypress',setQuery );
 function setQuery(e){
     if(e.keyCode===13){
+        
+        localStorageUpdate(search.value);
+      if(navigator.onLine===true){
         getResults(search.value);
+        console.log("online");
+    } else {
+        console.log("offline");
+        
+       let final=localStorageUpdate(search.value)
+       console.log("final",final);
 
+  displayResults(final);
+    }
+
+  
+       
 
         let wkly1=document.getElementById('wkly1');
         let wkly2=document.getElementById('wkly2');   
@@ -144,6 +151,10 @@ wkly3.classList.add('hide');
     }
 } 
 
+
+
+
+
 function getResults(query){
 fetch(`${api.url}weather?q=${query}&units=metric&APPID=${api.key}`)
    
@@ -151,7 +162,10 @@ fetch(`${api.url}weather?q=${query}&units=metric&APPID=${api.key}`)
        return weather.json()
        
     })
-    .then(displayResults);
+  
+    .then(displayResults)
+   
+    
   
 
 }
@@ -178,3 +192,23 @@ function dateBuilder(d){
     return `${day} ${date} ${month} ${year}`;
 }
 
+function localStorageUpdate(query){
+    fetch(`${api.url}weather?q=${query}&units=metric&APPID=${api.key}`)
+       
+        .then(weather=>{
+           return weather.json()
+           
+        })
+      
+        .then((local)=>{
+            localStorage.setItem(search.value,JSON.stringify(local))
+  
+ 
+ 
+        })
+        
+        
+       
+  let result=JSON.parse(localStorage.getItem(search.value));
+  return result;
+        }
