@@ -7,7 +7,7 @@
 }
 html{
 
-    background:linear-gradient(to right,#9AA4B5,#B2837A);
+   background-color:white;
     width: 100%;
     height: auto;
     
@@ -18,8 +18,9 @@ html{
 .container{
     margin: 3em 3em 1em 3em;
 border-radius: 1em;
-    height: 100vh;
-    background:linear-gradient(to right,#9BBFE1,#EBB797);
+    height: 80vh;
+   
+    background-color: #5f99cf;
     text-align: center;
 }
 input::placeholder{
@@ -76,8 +77,6 @@ align-items: center;
 } 
 .weeklyDetails{
     display: flex;
-    background:linear-gradient(to right,#9BBFE1,#EBB797);
-
     
 
 }
@@ -96,7 +95,7 @@ align-items: center;
     font-weight: 500;
 }
 .daily{
-    color: #F3F4F5;
+    color: #221f1f;
     text-align: center;
     margin-bottom: 1em;
 
